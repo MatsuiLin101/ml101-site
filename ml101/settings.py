@@ -26,6 +26,7 @@ SECRET_KEY = 'yur-qvtn93q2d$gsx0sd5q3uz!h-(k$wb4#@y+(eo@8&7c8uuo'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'ml101-site.herokuapp.com',
 ]
 
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appHome',
+    'appHomePage',
     'appPttParser',
 ]
 
@@ -123,7 +124,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static')
-)
