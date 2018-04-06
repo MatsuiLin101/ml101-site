@@ -7,7 +7,15 @@
 
 PttParser <br />
 <br />
-<a href="{% url 'appHomePage:home' %}">Home</a>
+<a href="{% url 'appHomePage:home' %}">Home</a><br />
+<br />
+<br />
+<form action="show_img" method="post">
+    {% csrf_token %}
+    <label>請輸入要顯示圖片的PTT網址</label><br />
+    <input type="text", name="href">
+    <input type="submit" value="確定">
+</form>
 
 </body>
 </html>
