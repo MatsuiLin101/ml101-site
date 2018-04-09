@@ -37,13 +37,16 @@ def home(request):
                     html = requests.get("https://www.ptt.cc" + str(atag.get("href")), cookies={"over18":"1"})
                     html.decoding = "utf-8"
                     soup = BeautifulSoup(html.text, "html.parser")
-                    image_list.append(soup.title.text)
+#                    article_url = "https://www.ptt.cc" + str(atag.get("href"))
+                    temp = ("https://www.ptt.cc" + str(atag.get("href")), soup.title.text)
+                    image_list.append(temp)
                     img_tag = soup.find_all("a")
                     for img in img_tag:
                         if ".jpg" in str(img.get("href")) or ".png" in str(img.get("href")):
                             image_list.append(str(img.get("href")))
         else:
-            image_list.append(soup.title.text)
+            temp = (url, soup.title.text)
+            image_list.append(temp)
             for atag in soup_list:
                 image_href = str(atag.get("href"))
                 if ".jpg" in image_href or ".png" in image_href:

@@ -5,7 +5,7 @@
 </head>
 <body>
 
-Show Img <br />
+Show Img<br />
 <br />
 <a href="{% url 'appPttParser:home' %}">Previous Page</a><br />
 <br />
@@ -17,7 +17,7 @@ Show Img <br />
         <br />
         <br />
         <br />
-        {{ image }}<br />
+        <a href="{{ image.0 }}" target="_blank">{{ image.1 }}</a><br />
     {% endif %}
 {% endfor %}
 <br>
