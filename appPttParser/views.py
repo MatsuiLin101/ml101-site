@@ -19,7 +19,7 @@ def home(request):
         else:
             tag = 1
 
-        html = requests.get(url)
+        html = requests.get(url, cookies={"over18":"1"})
         html.decoding = "utf-8"
 
         if html.status_code != 200:
@@ -34,7 +34,7 @@ def home(request):
         if tag == 0:
             for atag in soup_list:
                 if "M." in str(atag.get("href")):
-                    html = requests.get("https://www.ptt.cc" + str(atag.get("href")))
+                    html = requests.get("https://www.ptt.cc" + str(atag.get("href")), cookies={"over18":"1"})
                     html.decoding = "utf-8"
                     soup = BeautifulSoup(html.text, "html.parser")
                     image_list.append(soup.title.text)
