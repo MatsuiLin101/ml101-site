@@ -39,11 +39,13 @@ def show_img(request):
                     html = requests.get("https://www.ptt.cc" + str(atag.get("href")))
                     html.decoding = "utf-8"
                     soup = BeautifulSoup(html.text, "html.parser")
+                    image_list.append(soup.title.text)
                     img_tag = soup.find_all("a")
                     for img in img_tag:
                         if ".jpg" in str(img.get("href")) or ".png" in str(img.get("href")):
                             image_list.append(str(img.get("href")))
         else:
+            image_list.append(soup.title.text)
             for atag in soup_list:
                 image_href = str(atag.get("href"))
                 if ".jpg" in image_href or ".png" in image_href:

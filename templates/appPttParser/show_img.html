@@ -10,7 +10,15 @@ Parser <br />
 <br/>
 {{ result }} <br />
 {% for image in image_list %}
-    <img src="{{ image }}" width='20%'>
+    {% if ".jpg" in image or ".png" in image %}
+        <img src="{{ image }}" width='20%'>
+    {% else %}
+        <br />
+        <br />
+        <br />
+        <br />
+        {{ image }}<br />
+    {% endif %}
 {% endfor %}
 <br>
 <br>
