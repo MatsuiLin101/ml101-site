@@ -53,4 +53,4 @@ def show_img(request):
 
         return render(request, 'appPttParser/show_img.html', locals())
 
-    return render(request, 'appPttParser/ptt_parser.html', locals())
+    return render(request, 'appPttParser/home.html', locals())
