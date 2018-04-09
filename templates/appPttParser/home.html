@@ -12,8 +12,10 @@ Ptt Parser <br />
 <br />
 <form action="show_img" method="post">
     {% csrf_token %}
-    <label>請輸入要顯示圖片的PTT網址</label><br />
-    <input type="text", name="href">
+    <label>請輸入要顯示圖片的PTT文章網址或看板名稱<br />
+      Ex: Beauty、https://www.ptt.cc/bbs/Beauty/index.html、https://www.ptt.cc/bbs/Beauty/M.1523286476.A.1D4.html</label><br />
+      <br />
+    <input type="text", name="href" size="100">
     <input type="submit" value="確定">
 </form>
 
