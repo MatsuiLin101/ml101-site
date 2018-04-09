@@ -6,9 +6,9 @@
 <body>
 
 Show Img <br />
-{{ submit }}
-<br/>
-{{ result }} <br />
+<br />
+<a href="{% url 'appPttParser:home' %}">Previous Page</a><br />
+<br />
 {% for image in image_list %}
     {% if ".jpg" in image or ".png" in image %}
         <img src="{{ image }}" width='20%'>

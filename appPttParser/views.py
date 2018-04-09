@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup
 
 import requests
@@ -6,10 +6,6 @@ import requests
 # Create your views here.
 
 def home(request):
-
-    return render(request, 'appPttParser/home.html')
-
-def show_img(request):
 
     if request.method == "POST":
         url = request.POST.get("href")
@@ -27,7 +23,9 @@ def show_img(request):
         html.decoding = "utf-8"
 
         if html.status_code != 200:
-            return render(request, 'appPttParser/home.html')
+            message = "輸入錯誤或查無此看板、文章，請重新輸入。"
+
+            return render(request, 'appPttParser/home.html', {"message":message})
 
         soup = BeautifulSoup(html.text, 'html.parser')
         soup_list = soup.find_all("a")
@@ -54,3 +52,7 @@ def show_img(request):
         return render(request, 'appPttParser/show_img.html', locals())
 
     return render(request, 'appPttParser/home.html', locals())
+
+def show_img(request):
+
+    return render(request, 'appPttParser/show_img.html')
