@@ -36,11 +36,11 @@ def home(request):
         data_Yahoo = soup.select(".BaseGridItem__content___3LORP")
         if len(data_Yahoo) != 0:
             for i in range(count if len(data_Yahoo) >= count else len(data_Yahoo)):
+                # item = (name, link, price, img, shop)
                 item = (
                     data_Yahoo[i].text.split("$")[0],
                     data_Yahoo[i].get("href"),
                     "$" + data_Yahoo[i].text.split("$")[1] if not "折" in data_Yahoo[i].text else "$" + data_Yahoo[i].text.split("$")[1].split("折")[0],
-#                    data_Yahoo[i].text,
                     data_Yahoo[i].find_all("div")[0].get("style").split("(")[1].split(")")[0],
                     "Yahoo購物中心"
                 )
