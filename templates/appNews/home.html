@@ -5,7 +5,14 @@
 </head>
 <body>
 
-
+News <br />
+<br />
+<a href="{% url 'appHomePage:home' %}">Home</a><br />
+<br />
+{% for i in news_list %}
+    <img src="{{ i.2 }}" /><a href="{{ i.1 }}">{{ i.0 }}</a><br />
+    <br />
+{% endfor %}
 
 </body>
 </html>
