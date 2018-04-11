@@ -9,6 +9,13 @@ Price <br />
 <br />
 <a href="{% url 'appHomePage:home' %}">Home</a><br />
 <br />
+<form action="" method="post">
+    {% csrf_token %}
+    <label>請輸入要比價的商品名稱</label><br />
+    <br />
+    <input type="text" name="price" size="50">
+    <input type="submit" value="確定">
+</form>
 
 </body>
 </html>
