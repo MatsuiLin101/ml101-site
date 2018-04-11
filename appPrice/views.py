@@ -10,6 +10,7 @@ def home(request):
     if request.method == "POST":
         item_name = request.POST.get("name")
         item_list = []
+        count = 5   # Change how many items want search
 
         # PChome
         url_Pchome = "https://ecshweb.pchome.com.tw/search/v3.3/all/results?q=" + item_name + "&page=1&sort=rnk/dc"
@@ -17,7 +18,7 @@ def home(request):
         data_Pchome = json.loads(res_Pchome.text)
         if data_Pchome["totalRows"] != 0:
             item_Pchome = data_Pchome["prods"]
-            for i in range(3 if data_Pchome["totalRows"] >= 3 else data_Pchome["totalRows"]):
+            for i in range(count if data_Pchome["totalRows"] >= count else data_Pchome["totalRows"]):
                 # item = (name, link, price, img, shop)
                 item = (
                     item_Pchome[i].get("name"),
@@ -34,7 +35,7 @@ def home(request):
         soup = BeautifulSoup(res_Yahoo.text, "html.parser")
         data_Yahoo = soup.select(".BaseGridItem__content___3LORP")
         if len(data_Yahoo) != 0:
-            for i in range(3 if len(data_Yahoo) >= 3 else len(data_Yahoo)):
+            for i in range(count if len(data_Yahoo) >= count else len(data_Yahoo)):
                 item = (
                     data_Yahoo[i].text.split("$")[0],
                     data_Yahoo[i].get("href"),
