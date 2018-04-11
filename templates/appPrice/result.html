@@ -9,6 +9,26 @@ Result <br />
 <br />
 <a href="{% url 'appPrice:home' %}">Previous Page</a><br />
 <br />
+{% if item_list %}
+<table border="1">
+    <tr>
+      <td>商品圖</td>
+      <td>商品名稱</td>
+      <td>販售平台</td>
+      <td>價格</td>
+    </tr>
+{% else %}
+    {{ item_name }} 查無此商品！
+{% endif %}
+{% for item in item_list %}
+    <tr>
+        <td><img src="{{ item.3 }}" width="50%"></td>
+        <td><a href="{{ item.1 }}" target="_blank">{{ item.0 }}</a></td>
+        <td>{{ item.4 }}</td>
+        <td>${{ item.2 }}</td>
+    </tr>
+{% endfor %}
+</table>
 
 </body>
 </html>
