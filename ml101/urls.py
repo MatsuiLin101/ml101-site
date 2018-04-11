@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('appHomePage.urls', namespace='appHomePage')),
     path('PttParser/', include('appPttParser.urls', namespace='appPttParser')),
     path('Price/', include('appPrice.urls', namespace='appPrice')),
+    path('News/', include('appNews.urls', namespace='appNews')),
 #    re_path('.*', include('appHomePage.urls', namespace='appHomePag')),
 ]
