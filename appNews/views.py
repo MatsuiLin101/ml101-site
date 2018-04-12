@@ -19,7 +19,9 @@ def home(request):
     for apple in news_Apple:
         # new = (title, url, img, source)
         news = (apple.find("img").get("alt"), apple.find("a").get("href"), apple.find("img").get("data-src"), "蘋果日報")
-        news_list.append(news)
+        # Avoid some news don't have domain in front of href
+        if str(apple.find("a").get("href"))[0:4] == "http":
+            news_list.append(news)
 
     # Yahoo News
     url_Yahoo = "https://tw.news.yahoo.com/"
