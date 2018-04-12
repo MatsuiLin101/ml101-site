@@ -10,9 +10,13 @@ News <br />
 <a href="{% url 'appHomePage:home' %}">Home</a><br />
 <br />
 {% for i in news_list %}
-    <img src="{{ i.2 }}" /><a href="{{ i.1 }}">{{ i.0 }}</a><br />
+    <img src="{{ i.2 }}" /><a href="{{ i.1 }}" target="_blank">{{ i.0 }}</a><br />
     <br />
 {% endfor %}
+<br>
+<br>
+<br>
+{{ new_data }}
 
 </body>
 </html>
