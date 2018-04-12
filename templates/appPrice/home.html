@@ -11,10 +11,17 @@ Price <br />
 <br />
 <form action="" method="post">
     {% csrf_token %}
-    <label>請輸入要比價的商品名稱</label><br />
-    <br />
-    <input type="text" name="name" size="50">
-    <input type="submit" value="確定">
+    <table style="margin-left:auto; margin-right:auto; margin-top:100px;">
+        <tr>
+            <td><label>請輸入要比價的商品名稱</label><br /></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="name" size="50">
+                <input type="submit" value="確定">
+            </td>
+        </tr>
+    </table>
 </form>
 
 </body>
