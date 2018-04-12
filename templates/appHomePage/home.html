@@ -7,11 +7,20 @@
 
 Home <br />
 <br />
-<a href="{% url 'appPttParser:home' %}">PttParser</a><br />
-<br />
-<a href="{% url 'appPrice:home' %}">Compare Price</a><br />
-<br />
-<a href="{% url 'appNews:home' %}">News</a>
+<table style="margin-left:auto; margin-right:auto; margin-top:100px;">
+    <tr>
+        <td><a href="{% url 'appPttParser:home' %}"><img src="https://ml-site-image.herokuapp.com/media/imageapp/0Q810I6T.png" /></a></td>
+        <td><a href="{% url 'appPttParser:home' %}">PttParser</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'appPrice:home' %}"><img src="https://ml-site-image.herokuapp.com/media/imageapp/CRF77332.png" /></a></td>
+        <td><a href="{% url 'appPrice:home' %}">Compare Price</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url 'appNews:home' %}"><img src="https://ml-site-image.herokuapp.com/media/imageapp/N6RRQOJM.png" /></a></td>
+        <td><a href="{% url 'appNews:home' %}">News</a></td>
+    </tr>
+</table>
 
 </body>
 </html>
