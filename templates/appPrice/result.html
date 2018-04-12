@@ -10,22 +10,22 @@ Result <br />
 <a href="{% url 'appPrice:home' %}">Previous Page</a><br />
 <br />
 {% if item_list %}
-<table border="1">
+<table border="1" style="margin-left:auto; margin-right:auto;">
     <tr>
-      <td>商品圖</td>
-      <td>商品名稱</td>
-      <td>販售平台</td>
-      <td>價格</td>
+      <td align="center" valign="middle">商品圖</td>
+      <td align="center" valign="middle">商品名稱</td>
+      <td align="center" valign="middle">販售平台</td>
+      <td align="center" valign="middle">價格</td>
     </tr>
 {% else %}
     {{ item_name }} 查無此商品！
 {% endif %}
 {% for item in item_list %}
     <tr>
-        <td><img src="{{ item.3 }}" width="50%"></td>
-        <td><a href="{{ item.1 }}" target="_blank">{{ item.0 }}</a></td>
-        <td>{{ item.4 }}</td>
-        <td>{{ item.2 }}</td>
+        <td align="center" valign="middle"><img src="{{ item.3 }}" width="50%"></td>
+        <td align="center" valign="middle"><a href="{{ item.1 }}" target="_blank">{{ item.0 }}</a></td>
+        <td align="center" valign="middle">{{ item.4 }}</td>
+        <td align="center" valign="middle">{{ item.2 }}</td>
     </tr>
 {% endfor %}
 </table>
