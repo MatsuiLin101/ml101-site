@@ -9,14 +9,20 @@ News <br />
 <br />
 <a href="{% url 'appHomePage:home' %}">Home</a><br />
 <br />
+<table border="1">
+    <tr>
+        <td>新聞縮圖</td>
+        <td>新聞標題</td>
+        <td>新聞來源</td>
+    </tr>
 {% for i in news_list %}
-    <img src="{{ i.2 }}" /><a href="{{ i.1 }}" target="_blank">{{ i.0 }}</a><br />
-    <br />
+    <tr>
+        <td><a href="{{ i.1 }}" target="_blank"><img src="{{ i.2 }}" /></a></td>
+        <td><a href="{{ i.1 }}" target="_blank">{{ i.0 }}</a></td>
+        <td>{{ i.3 }}</td>
+    </tr>
 {% endfor %}
-<br>
-<br>
-<br>
-{{ new_data }}
+</table>
 
 </body>
 </html>
