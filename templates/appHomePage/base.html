@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<ul style="list-style-type:none; margin:0; padding:0; ">
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appHomePage:home' %}">Home</a></li>
+    {% block navbar %}{% endblock %}
+</ul>
+{% block content %}{% endblock %}
+
+</body>
+</html>

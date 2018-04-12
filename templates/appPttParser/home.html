@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <title>Ptt Parser</title>
-</head>
-<body>
+{% extends "appHomePage/base.html" %}
+{% block title %}Home{% endblock %}
 
-Ptt Parser <br />
-<br />
-<a href="{% url 'appHomePage:home' %}">Home</a><br />
-<br />
-{% if message != "" %}
-    {{ message }}<br />
-{% endif %}
+{% block navbar %}
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appHomePage:home' %}">Previous</a></li>
+{% endblock %}
+
+{% block content %}
+
 <br />
 <form action="" method="post">
     {% csrf_token %}
@@ -29,9 +24,13 @@ Ptt Parser <br />
                 <input type="submit" value="確定">
             </td>
         </tr>
+        {% if message != "" %}
+        <tr>
+            <td>{{ message }}</td>
+        </tr>
+        {% endif %}
     </table>
 
 </form>
 
-</body>
-</html>
+{% endblock %}

@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <title>News</title>
-</head>
-<body>
+{% extends "appHomePage/base.html" %}
+{% block title %}Home{% endblock %}
 
-News <br />
+{% block navbar %}
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appHomePage:home' %}">Previous</a></li>
+{% endblock %}
+
+{% block content %}
+
 <br />
-<a href="{% url 'appHomePage:home' %}">Home</a><br />
 <br />
 <table border="1" style="margin-left:auto; margin-right:auto;">
     <tr>
@@ -24,5 +24,4 @@ News <br />
 {% endfor %}
 </table>
 
-</body>
-</html>
+{% endblock %}

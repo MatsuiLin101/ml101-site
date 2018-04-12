@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <title>Show Img</title>
-</head>
-<body>
+{% extends "appHomePage/base.html" %}
+{% block title %}Home{% endblock %}
 
-Show Img<br />
-<br />
-<a href="{% url 'appPttParser:home' %}">Previous Page</a><br />
+{% block navbar %}
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appPttParser:home' %}">Previous</a></li>
+{% endblock %}
+
+{% block content %}
+
 <br />
 {% for image in image_list %}
     {% if ".jpg" in image or ".png" in image %}
@@ -20,10 +19,5 @@ Show Img<br />
         <a href="{{ image.0 }}" target="_blank">{{ image.1 }}</a><br />
     {% endif %}
 {% endfor %}
-<br>
-<br>
-<br>
-<br>
 
-</body>
-</html>
+{% endblock %}

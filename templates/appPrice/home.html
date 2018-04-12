@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <title>Price</title>
-</head>
-<body>
+{% extends "appHomePage/base.html" %}
+{% block title %}Home{% endblock %}
 
-Price <br />
-<br />
-<a href="{% url 'appHomePage:home' %}">Home</a><br />
+{% block navbar %}
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appHomePage:home' %}">Previous</a></li>
+{% endblock %}
+
+{% block content %}
+
 <br />
 <form action="" method="post">
     {% csrf_token %}
@@ -24,5 +23,4 @@ Price <br />
     </table>
 </form>
 
-</body>
-</html>
+{% endblock %}

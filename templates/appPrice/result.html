@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <title>Result</title>
-</head>
-<body>
+{% extends "appHomePage/base.html" %}
+{% block title %}Home{% endblock %}
 
-Result <br />
+{% block navbar %}
+    <li style="float:left; display:inline-block; padding:10px; "><a href="{% url 'appPrice:home' %}">Previous</a></li>
+{% endblock %}
+
+{% block content %}
+
 <br />
-<a href="{% url 'appPrice:home' %}">Previous Page</a><br />
 <br />
 {% if item_list %}
 <table border="1" style="margin-left:auto; margin-right:auto;">
@@ -30,5 +30,4 @@ Result <br />
 {% endfor %}
 </table>
 
-</body>
-</html>
+{% endblock %}
