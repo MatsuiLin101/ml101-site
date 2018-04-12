@@ -11,15 +11,15 @@ News <br />
 <br />
 <table border="1">
     <tr>
-        <td>新聞縮圖</td>
-        <td>新聞標題</td>
-        <td>新聞來源</td>
+        <td align="center" valign="middle">新聞縮圖</td>
+        <td align="center" valign="middle">新聞標題</td>
+        <td align="center" valign="middle">新聞來源</td>
     </tr>
 {% for i in news_list %}
     <tr>
-        <td><a href="{{ i.1 }}" target="_blank"><img src="{{ i.2 }}" /></a></td>
-        <td><a href="{{ i.1 }}" target="_blank">{{ i.0 }}</a></td>
-        <td>{{ i.3 }}</td>
+        <td align="center" valign="middle"><a href="{{ i.1 }}" target="_blank"><img src="{{ i.2 }}" /></a></td>
+        <td align="center" valign="middle"><a href="{{ i.1 }}" target="_blank">{{ i.0 }}</a></td>
+        <td align="center" valign="middle">{{ i.3 }}</td>
     </tr>
 {% endfor %}
 </table>
