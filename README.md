@@ -1,5 +1,5 @@
-# ml101-site
-以網頁的方式，DEMO爬蟲程式，部署在Heroku上  
+﻿# ml101-site
+使用Python的Django Framework製作的網頁爬蟲程式，部署在Heroku上  
 網址：http://ml101-site.herokuapp.com  
   
 目前有3種功能
